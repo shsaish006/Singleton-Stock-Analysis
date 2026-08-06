@@ -10,10 +10,33 @@ With seamless authentication, direct integration with global market APIs, and in
 
 Singleton is built on a highly modular, event-driven architecture that separates the user interface from heavy background processing.
 
-- **Frontend Architecture**: Built entirely with the Next.js App Router and React. Uses Shadcn UI and TailwindCSS for a highly responsive, customized aesthetic.
-- **Backend & Event Processing**: Leverages Next.js Server Actions for immediate state changes (like updating watchlists) and Inngest for heavy, asynchronous background tasks (like checking stock thresholds, generating AI reports, and sending emails) without blocking the user.
-- **Database Layer**: Powered by MongoDB. It natively handles session persistence for Better Auth, while also storing user preferences and application state.
-- **External API Integrations**: Directly queries Finnhub for real-time market data and historical stock performance. Connects to Google Gemini for AI-driven sentiment analysis and market summary generation.
+```text
++-------------------+        HTTP / Server Actions         +--------------------------+
+|    User Client    | -----------------------------------> |   Next.js Application    |
++-------------------+                                      +--------------------------+
+                                                                     |
+                                                                     |
+       +-------------------------------------------------------------+
+       |
+       v
++-----------------------+         Reads/Writes             +-------------------------+
+|   Better Auth Layer   | <==============================> |    MongoDB Database     |
++-----------------------+                                  +-------------------------+
+       |
+       |  Dispatches Events (Async)
+       v
++-----------------------+         Execute Job              +-------------------------+
+|    Inngest Broker     | -------------------------------> | Inngest Background Jobs |
++-----------------------+                                  +-------------------------+
+                                                                     |
+       +-------------------------------------------------------------+
+       |
+       +...................> [Finnhub API] (Real-time Market Data)
+       |
+       +...................> [Google Gemini API] (AI Sentiment Analysis)
+       |
+       +...................> [Nodemailer] (Email Notifications)
+```
 
 ## Data Flow & Integration
 
