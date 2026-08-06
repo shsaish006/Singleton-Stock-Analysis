@@ -10,34 +10,10 @@ With seamless authentication, direct integration with global market APIs, and in
 
 Singleton is built on a highly modular, event-driven architecture that separates the user interface from heavy background processing.
 
-```mermaid
-graph TD
-    User([User Client]) --> |HTTP / Server Actions| NextJS[Next.js Application]
-    
-    subgraph Frontend Architecture
-        NextJS --> |UI Components| Shadcn[Shadcn UI & TailwindCSS]
-        NextJS --> |State & Routing| React[React & Next Router]
-    end
-    
-    subgraph External Data Providers
-        NextJS <--> |Real-Time Market Data| Finnhub[Finnhub API]
-        Inngest <--> |AI Sentiment Analysis| Gemini[Google Gemini AI]
-    end
-    
-    subgraph Core Backend Services
-        NextJS <--> |Session Management| BetterAuth[Better Auth]
-        BetterAuth --> |Read/Write| MongoDB[(MongoDB)]
-        NextJS --> |Watchlists & Settings| MongoDB
-    end
-    
-    subgraph Event-Driven Background Processing
-        NextJS -.-> |Dispatch Event| InngestBroker((Inngest Broker))
-        InngestBroker --> |Execute Job| Inngest[Inngest Background Workers]
-        Inngest --> |Database Operations| MongoDB
-        Inngest --> |Trigger Notifications| Nodemailer[Nodemailer]
-        Nodemailer --> |Email Delivery| User
-    end
-```
+- **Frontend Architecture**: Built entirely with the Next.js App Router and React. Uses Shadcn UI and TailwindCSS for a highly responsive, customized aesthetic.
+- **Backend & Event Processing**: Leverages Next.js Server Actions for immediate state changes (like updating watchlists) and Inngest for heavy, asynchronous background tasks (like checking stock thresholds, generating AI reports, and sending emails) without blocking the user.
+- **Database Layer**: Powered by MongoDB. It natively handles session persistence for Better Auth, while also storing user preferences and application state.
+- **External API Integrations**: Directly queries Finnhub for real-time market data and historical stock performance. Connects to Google Gemini for AI-driven sentiment analysis and market summary generation.
 
 ## Data Flow & Integration
 
