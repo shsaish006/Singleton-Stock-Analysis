@@ -137,7 +137,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-gray-900 text-foreground;
+    @apply bg-[#FDFBF7] text-[#111827];
   }
 }
 
@@ -146,7 +146,7 @@
     @apply mx-auto max-w-screen-2xl px-4 md:px-6 lg:px-8;
   }
   .yellow-btn {
-    @apply h-12 cursor-pointer bg-gradient-to-b from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-400 text-gray-950 font-medium text-base rounded-lg shadow-lg disabled:opacity-50;
+    @apply h-12 cursor-pointer bg-[#111827] hover:bg-[#374151] text-white font-medium text-base rounded-lg shadow-md transition-colors disabled:opacity-50;
   }
   .home-wrapper {
     @apply text-gray-400 flex-col gap-4 md:gap-10 items-center sm:items-start;
@@ -161,49 +161,49 @@
     @apply flex justify-between items-center px-6 py-4 text-gray-500;
   }
   .auth-layout {
-    @apply flex flex-col justify-between lg:flex-row h-screen bg-gray-900 relative overflow-hidden;
+    @apply flex flex-col justify-between lg:flex-row h-screen bg-[#FDFBF7] relative overflow-hidden text-[#111827];
   }
   .auth-logo {
     @apply pt-6 lg:pt-8 mb-8 lg:mb-12;
   }
   .auth-left-section {
-    @apply w-full lg:w-[45%] lg:h-screen px-6 lg:px-16 flex flex-col overflow-y-auto;
+    @apply w-full lg:w-[45%] lg:h-screen px-6 lg:px-16 flex flex-col overflow-y-auto bg-white;
   }
   .auth-right-section {
-    @apply w-full max-lg:border-t max-lg:border-gray-600 lg:w-[55%] lg:h-screen bg-gray-800 px-6 py-4 md:p-6 lg:py-12 lg:px-18 flex flex-col justify-start;
+    @apply w-full max-lg:border-t max-lg:border-[#E5E7EB] lg:w-[55%] lg:h-screen bg-[#FDFBF7] px-6 py-4 md:p-6 lg:py-12 lg:px-18 flex flex-col justify-center items-center;
   }
   .auth-blockquote {
-    @apply text-sm md:text-xl lg:text-2xl font-medium text-gray-400 mb-1 md:mb-6 lg:mb-8;
+    @apply text-sm md:text-xl lg:text-2xl font-medium text-[#4B5563] mb-1 md:mb-6 lg:mb-8;
   }
   .auth-testimonial-author {
-    @apply text-xs md:text-lg font-bold text-gray-400 not-italic;
+    @apply text-xs md:text-lg font-bold text-[#111827] not-italic;
   }
   .auth-dashboard-preview {
-    @apply border-6 border-gray-800 left-0 hidden w-[1024px] h-auto max-w-none lg:block rounded-xl shadow-2xl;
+    @apply border border-[#E5E7EB] left-0 hidden w-[1024px] h-auto max-w-none lg:block rounded-xl shadow-xl shadow-black/5;
   }
   .form-title {
-    @apply text-4xl font-bold text-gray-400 mb-10;
+    @apply text-4xl font-serif font-bold text-[#111827] mb-10;
   }
   .form-label {
-    @apply text-sm font-medium text-gray-400;
+    @apply text-sm font-medium text-[#4B5563];
   }
   .form-input {
-    @apply h-12 px-3 py-3 text-white text-base placeholder:text-gray-500 border-gray-600 bg-gray-800 rounded-lg focus:!border-yellow-500 focus:ring-0;
+    @apply h-12 px-3 py-3 text-[#111827] text-base placeholder:text-[#9CA3AF] border border-[#E5E7EB] bg-white rounded-lg focus:!border-[#111827] focus:ring-1 focus:ring-[#111827] transition-all;
   }
   .select-trigger {
-    @apply w-full !h-12 px-3 py-3 text-base border-gray-600 bg-gray-800 text-white rounded-lg focus:!border-yellow-500 focus:ring-0;
+    @apply w-full !h-12 px-3 py-3 text-base border border-[#E5E7EB] bg-white text-[#111827] rounded-lg focus:!border-[#111827] focus:ring-1 focus:ring-[#111827] transition-all;
   }
   .country-select-trigger {
-    @apply h-12 px-3 py-3 text-base w-full justify-between font-normal border-gray-600 bg-gray-800 text-gray-400 rounded-lg focus:!border-yellow-500 focus:ring-0;
+    @apply h-12 px-3 py-3 text-base w-full justify-between font-normal border border-[#E5E7EB] bg-white text-[#111827] rounded-lg focus:!border-[#111827] focus:ring-1 focus:ring-[#111827] transition-all;
   }
   .country-select-input {
-    @apply !bg-gray-800 text-gray-400 border-0 border-b border-gray-600 rounded-none focus:ring-0 placeholder:text-gray-500;
+    @apply !bg-white text-[#111827] border-0 border-b border-[#E5E7EB] rounded-none focus:ring-0 placeholder:text-[#9CA3AF];
   }
   .country-select-empty {
-    @apply text-gray-500 py-6 text-center !bg-gray-800;
+    @apply text-[#6B7280] py-6 text-center !bg-white;
   }
   .country-select-item {
-    @apply text-white cursor-pointer px-3 py-2 rounded-sm bg-gray-800 hover:!bg-gray-600;
+    @apply text-[#111827] cursor-pointer px-3 py-2 rounded-sm bg-white hover:!bg-[#F3F4F6];
   }
   .footer-link {
     @apply text-gray-400 font-medium hover:text-yellow-400 hover:underline transition-colors;
