@@ -24,7 +24,7 @@
     "cmdk": "^1.1.1",
     "dotenv": "^16.4.5",
     "framer-motion": "^13.1.0",
-    "inngest": "^3.40.1",
+    "inngest": "latest",
     "lucide-react": "^0.542.0",
     "mongodb": "^6.19.0",
     "mongoose": "^8.18.0",
